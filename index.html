@@ -5,20 +5,12 @@
 
 <meta charset="UTF-8">
 
-<meta
-name="viewport"
-content="width=device-width, initial-scale=1.0"
->
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<title>
-Hadifa & Farid | Wedding RSVP
-</title>
+<title>Hadifa & Farid | Wedding RSVP</title>
 
 <style>
-
-/* =========================
-   BASIC
-========================= */
 
 * {
     box-sizing: border-box;
@@ -29,27 +21,47 @@ html {
 }
 
 body {
-
     margin: 0;
-
-    background: #f7f2ed;
-
+    background: #eee6df;
     color: #51453e;
-
-    font-family:
-    Arial,
-    sans-serif;
+    font-family: Arial, sans-serif;
 }
 
 .container {
-
     max-width: 600px;
-
     margin: auto;
-
     background: #fffaf6;
-
     min-height: 100vh;
+    overflow: hidden;
+}
+
+
+/* =========================
+   FLORAL DECORATION
+========================= */
+
+.floral {
+    position: absolute;
+    width: 130px;
+    opacity: 0.55;
+    pointer-events: none;
+}
+
+.floral-top {
+    top: 0;
+    left: 0;
+}
+
+.floral-bottom {
+    bottom: 0;
+    right: 0;
+    transform: rotate(180deg);
+}
+
+.flower {
+    font-size: 70px;
+    line-height: 1;
+    color: #b6a095;
 }
 
 
@@ -58,91 +70,59 @@ body {
 ========================= */
 
 .hero {
-
     min-height: 100vh;
-
+    position: relative;
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     text-align: center;
-
-    padding: 50px 25px;
-
+    padding: 60px 25px;
     background:
-    linear-gradient(
-        180deg,
-        #f3ece5,
-        #fffaf6
-    );
+        linear-gradient(
+            180deg,
+            #f1e9e2,
+            #fffaf6
+        );
 }
 
 .small-title {
-
     font-size: 10px;
-
-    letter-spacing: 4px;
-
+    letter-spacing: 5px;
     text-transform: uppercase;
-
-    margin-bottom: 25px;
+    margin-bottom: 28px;
 }
 
 .names {
-
-    font-family:
-    Georgia,
-    serif;
-
+    font-family: Georgia, serif;
     font-size: 65px;
-
     font-weight: 400;
-
-    line-height: .8;
-
+    line-height: .85;
     margin: 0;
 }
 
 .and {
-
-    font-family:
-    Georgia,
-    serif;
-
-    font-size: 25px;
-
+    font-family: Georgia, serif;
+    font-size: 24px;
     font-style: italic;
-
-    margin: 18px 0;
+    margin: 20px 0;
 }
 
 .line {
-
     width: 55px;
-
     height: 1px;
-
     background: #b9aaa0;
-
     margin: 30px auto;
 }
 
 .date {
-
     font-size: 11px;
-
     letter-spacing: 3px;
 }
 
 .location {
-
     margin-top: 12px;
-
-    font-size: 11px;
-
-    letter-spacing: 1px;
+    font-size: 10px;
+    letter-spacing: 2px;
 }
 
 
@@ -151,27 +131,16 @@ body {
 ========================= */
 
 .button {
-
     display: inline-block;
-
     margin-top: 30px;
-
     padding: 15px 35px;
-
     background: #5b4c43;
-
     color: white;
-
     text-decoration: none;
-
     font-size: 10px;
-
     font-weight: bold;
-
     letter-spacing: 2px;
-
     border: none;
-
     cursor: pointer;
 }
 
@@ -181,29 +150,20 @@ body {
 ========================= */
 
 section {
-
-    padding: 60px 30px;
-
+    position: relative;
+    padding: 65px 30px;
     text-align: center;
 }
 
 .section-title {
-
-    font-family:
-    Georgia,
-    serif;
-
-    font-size: 36px;
-
+    font-family: Georgia, serif;
+    font-size: 34px;
     font-weight: 400;
-
     margin: 0 0 20px;
 }
 
 .section-text {
-
     font-size: 13px;
-
     line-height: 2;
 }
 
@@ -213,33 +173,23 @@ section {
 ========================= */
 
 .details {
-
     background: #f3ece5;
 }
 
 .detail {
-
-    margin: 30px 0;
+    margin: 35px 0;
 }
 
 .detail-label {
-
     font-size: 9px;
-
     letter-spacing: 3px;
-
     text-transform: uppercase;
-
-    margin-bottom: 8px;
+    margin-bottom: 9px;
 }
 
 .detail-value {
-
-    font-family:
-    Georgia,
-    serif;
-
-    font-size: 23px;
+    font-family: Georgia, serif;
+    font-size: 22px;
 }
 
 
@@ -248,34 +198,23 @@ section {
 ========================= */
 
 .countdown {
-
     display: flex;
-
     justify-content: center;
-
     gap: 15px;
-
     margin-top: 30px;
 }
 
 .count-box {
-
     min-width: 55px;
 }
 
 .count-number {
-
-    font-family:
-    Georgia,
-    serif;
-
+    font-family: Georgia, serif;
     font-size: 30px;
 }
 
 .count-label {
-
     font-size: 8px;
-
     letter-spacing: 1px;
 }
 
@@ -285,71 +224,45 @@ section {
 ========================= */
 
 .form-group {
-
     text-align: left;
-
     margin: 20px 0;
 }
 
 label {
-
     display: block;
-
     font-size: 10px;
-
     letter-spacing: 1px;
-
     text-transform: uppercase;
-
     margin-bottom: 8px;
 }
 
 input,
 select,
 textarea {
-
     width: 100%;
-
     padding: 14px;
-
     border: 1px solid #d8ccc2;
-
     background: white;
-
     color: #51453e;
-
     font-size: 13px;
-
     font-family: Arial, sans-serif;
-
     border-radius: 0;
 }
 
 textarea {
-
     min-height: 90px;
-
     resize: vertical;
 }
 
 .submit-button {
-
     width: 100%;
-
     padding: 16px;
-
     background: #5b4c43;
-
     color: white;
-
     border: none;
-
     font-size: 10px;
-
     font-weight: bold;
-
     letter-spacing: 2px;
-
     cursor: pointer;
 }
 
@@ -359,12 +272,66 @@ textarea {
 ========================= */
 
 .success {
-
     display: none;
-
     text-align: center;
+    padding: 30px 5px;
+}
 
-    padding: 25px 5px;
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    background: #f3ece5;
+}
+
+.contact-card {
+    margin: 25px auto;
+    padding: 20px;
+    max-width: 350px;
+}
+
+.contact-name {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.contact-phone {
+    color: #51453e;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+
+/* =========================
+   QR
+========================= */
+
+.qr-section {
+    background: #fffaf6;
+}
+
+.qr-box {
+    margin: 25px auto;
+    padding: 15px;
+    width: 180px;
+    height: 180px;
+    border: 1px solid #d8ccc2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qr-box img {
+    width: 145px;
+    height: 145px;
+}
+
+.qr-note {
+    font-size: 11px;
+    line-height: 1.8;
 }
 
 
@@ -373,17 +340,10 @@ textarea {
 ========================= */
 
 footer {
-
     text-align: center;
-
-    padding: 35px 20px;
-
+    padding: 40px 20px;
     background: #f3ece5;
-
-    font-family:
-    Georgia,
-    serif;
-
+    font-family: Georgia, serif;
     font-size: 20px;
 }
 
@@ -395,13 +355,15 @@ footer {
 @media(max-width:450px) {
 
     .names {
-
         font-size: 55px;
     }
 
     .section-title {
+        font-size: 30px;
+    }
 
-        font-size: 32px;
+    .countdown {
+        gap: 10px;
     }
 
 }
@@ -413,7 +375,6 @@ footer {
 
 <body>
 
-
 <div class="container">
 
 
@@ -422,6 +383,10 @@ footer {
 ========================= -->
 
 <section class="hero">
+
+<div class="floral floral-top">
+<div class="flower">❀</div>
+</div>
 
 <div>
 
@@ -451,13 +416,14 @@ Farid
 BALAI AKAD EVENT HALL
 </div>
 
-<a
-href="#rsvp"
-class="button"
->
+<a href="#rsvp" class="button">
 RSVP
 </a>
 
+</div>
+
+<div class="floral floral-bottom">
+<div class="flower">❀</div>
 </div>
 
 </section>
@@ -542,9 +508,10 @@ Balai Akad Event Hall
 <a
 class="button"
 target="_blank"
-href="https://www.google.com/maps/search/?api=1&query=Balai+Akad+Event+Hall"
->
+href="https://www.google.com/maps/search/?api=1&query=Balai+Akad+Event+Hall">
+
 VIEW LOCATION
+
 </a>
 
 </div>
@@ -568,8 +535,7 @@ Counting Down
 
 <div
 class="count-number"
-id="days"
->
+id="days">
 0
 </div>
 
@@ -584,8 +550,7 @@ DAYS
 
 <div
 class="count-number"
-id="hours"
->
+id="hours">
 0
 </div>
 
@@ -600,8 +565,7 @@ HOURS
 
 <div
 class="count-number"
-id="minutes"
->
+id="minutes">
 0
 </div>
 
@@ -616,8 +580,7 @@ MINUTES
 
 <div
 class="count-number"
-id="seconds"
->
+id="seconds">
 0
 </div>
 
@@ -633,7 +596,7 @@ SECONDS
 
 
 <!-- =========================
-     RSVP FORM
+     RSVP
 ========================= -->
 
 <section id="rsvp">
@@ -648,16 +611,17 @@ Kindly RSVP by
 
 <strong>
 27 February 2027
-
 </strong>
+
+<br>
+
+Maximum 4 guests per RSVP.
 
 </p>
 
 
 <form id="rsvpForm">
 
-
-<!-- NAME -->
 
 <div class="form-group">
 
@@ -669,13 +633,10 @@ Full Name
 type="text"
 id="name"
 placeholder="Your full name"
-required
->
+required>
 
 </div>
 
-
-<!-- ATTENDANCE -->
 
 <div class="form-group">
 
@@ -685,8 +646,7 @@ Will you be attending?
 
 <select
 id="attendance"
-required
->
+required>
 
 <option value="">
 Please select
@@ -705,33 +665,17 @@ Sorry, I can't make it
 </div>
 
 
-<!-- GUESTS -->
-
 <div
 class="form-group"
 id="guestGroup"
-style="display:none"
->
+style="display:none">
 
 <label>
 Number of Guests
 </label>
 
-<p
-style="
-font-size:10px;
-color:#8b7c71;
-margin-top:-2px;
-"
->
-
-Maximum 3 people per RSVP
-
-</p>
-
 <select
-id="guests"
->
+id="guests">
 
 <option value="">
 Select number
@@ -749,12 +693,14 @@ Select number
 3 people
 </option>
 
+<option value="4">
+4 people
+</option>
+
 </select>
 
 </div>
 
-
-<!-- PHONE -->
 
 <div class="form-group">
 
@@ -765,13 +711,10 @@ Phone Number
 <input
 type="tel"
 id="phone"
-placeholder="01X-XXXXXXX"
->
+placeholder="01X-XXXXXXX">
 
 </div>
 
-
-<!-- MESSAGE -->
 
 <div class="form-group">
 
@@ -781,22 +724,18 @@ Message
 
 <textarea
 id="message"
-placeholder="Leave a message for the couple..."
->
-</textarea>
+placeholder="Leave a message for the couple..."></textarea>
 
 </div>
 
 
 <button
 type="submit"
-class="submit-button"
->
+class="submit-button">
 
 SUBMIT RSVP
 
 </button>
-
 
 </form>
 
@@ -805,28 +744,24 @@ SUBMIT RSVP
 
 <div
 class="success"
-id="success"
->
+id="success">
 
 <div
 style="
 font-family:Georgia,serif;
 font-size:32px;
 margin-bottom:15px;
-"
->
+">
 
 Thank You 🤍
 
 </div>
 
-
 <div
 style="
 font-size:13px;
 line-height:2;
-"
->
+">
 
 Your RSVP has been received.
 
@@ -841,8 +776,8 @@ id="rsvpID"
 style="
 font-size:22px;
 letter-spacing:2px;
-"
->
+">
+
 </strong>
 
 <br><br>
@@ -854,8 +789,8 @@ with you!
 
 </div>
 
-
 </section>
+
 
 <!-- =========================
      FAMILY CONTACT
@@ -863,58 +798,100 @@ with you!
 
 <section class="contact">
 
-    <h2 class="section-title">
-        For Any Enquiries
-    </h2>
+<h2 class="section-title">
+For Any Enquiries
+</h2>
 
-    <p class="section-text">
-        If you have any questions regarding
-        the wedding or venue, please contact
-        our family.
-    </p>
+<p class="section-text">
+
+If you have any questions regarding
+the wedding or venue,
+please contact our family.
+
+</p>
 
 
-    <div class="detail">
+<div class="contact-card">
 
-        <div class="detail-label">
-            Bride's Family
-        </div>
+<div class="detail-label">
+FAMILY
+</div>
 
-        <div class="detail-value">
-            Faizal (Bapa)
-        </div>
+<div class="contact-name">
+Faizal (Bapa)
+</div>
 
-        <a
-            href="tel:0195532544"
-            style="
-                color:#51453e;
-                text-decoration:none;
-                font-size:13px;
-            "
-        >
-            019-553 2544
-        </a>
+<a
+class="contact-phone"
+href="tel:0195532544">
 
-        </div>
+019-553 2544
 
-        <div class="detail-value">
-            Halimah (Ibu)
-        </div>
+</a>
 
-        <a
-            href="tel:01155523025"
-            style="
-                color:#51453e;
-                text-decoration:none;
-                font-size:13px;
-            "
-        >
-            011-5552 3025
-        </a>
+</div>
 
-    </div>
+
+<div class="contact-card">
+
+<div class="contact-name">
+Halimah (Ibu)
+</div>
+
+<a
+class="contact-phone"
+href="tel:01155523025">
+
+011-5552 3025
+
+</a>
+
+</div>
 
 </section>
+
+
+<!-- =========================
+     QR CODE
+========================= -->
+
+<section class="qr-section">
+
+<h2 class="section-title">
+Scan To RSVP
+</h2>
+
+<p class="qr-note">
+
+Scan the QR code to visit our
+wedding RSVP website.
+
+</p>
+
+
+<div class="qr-box">
+
+<img
+src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https%3A%2F%2Fpttd867c4s-hue.github.io%2Fhadifa-farid-rsvp%2F"
+alt="Wedding RSVP QR Code">
+
+</div>
+
+
+<p class="qr-note">
+
+Hadifa & Farid<br>
+13 March 2027
+
+</p>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
 
 With love,
@@ -937,7 +914,6 @@ Hadifa & Farid ♡
 ========================= */
 
 const SCRIPT_URL =
-
 "https://script.google.com/macros/s/AKfycbxdZCpiqxk19V5EM_-NcpiH8YPcEwBj2sUZsmddzVk-LeK0SBh6zCvGzkrq88DdS_3mKQ/exec";
 
 
@@ -946,7 +922,6 @@ const SCRIPT_URL =
 ========================= */
 
 const weddingDate =
-
 new Date(
 "March 13, 2027 10:00:00"
 ).getTime();
@@ -954,73 +929,74 @@ new Date(
 
 function updateCountdown() {
 
-    const now =
-    new Date().getTime();
+const now =
+new Date().getTime();
 
-    const distance =
-    weddingDate - now;
-
-
-    if (distance <= 0) {
-
-        document.getElementById("days")
-        .innerText = "0";
-
-        document.getElementById("hours")
-        .innerText = "0";
-
-        document.getElementById("minutes")
-        .innerText = "0";
-
-        document.getElementById("seconds")
-        .innerText = "0";
-
-        return;
-    }
+const distance =
+weddingDate - now;
 
 
-    const days =
-    Math.floor(
-        distance /
-        (1000 * 60 * 60 * 24)
-    );
+if (distance <= 0) {
+
+document.getElementById("days")
+.innerText = "0";
+
+document.getElementById("hours")
+.innerText = "0";
+
+document.getElementById("minutes")
+.innerText = "0";
+
+document.getElementById("seconds")
+.innerText = "0";
+
+return;
+
+}
 
 
-    const hours =
-    Math.floor(
-        (distance %
-        (1000 * 60 * 60 * 24)) /
-        (1000 * 60 * 60)
-    );
+const days =
+Math.floor(
+distance /
+(1000 * 60 * 60 * 24)
+);
 
 
-    const minutes =
-    Math.floor(
-        (distance %
-        (1000 * 60 * 60)) /
-        (1000 * 60)
-    );
+const hours =
+Math.floor(
+(distance %
+(1000 * 60 * 60 * 24)) /
+(1000 * 60 * 60)
+);
 
 
-    const seconds =
-    Math.floor(
-        (distance %
-        (1000 * 60)) /
-        1000
-    );
+const minutes =
+Math.floor(
+(distance %
+(1000 * 60 * 60)) /
+(1000 * 60)
+);
 
 
-    document.getElementById("days")
-    .innerText = days;
+const seconds =
+Math.floor(
+(distance %
+(1000 * 60)) /
+1000
+);
 
-    document.getElementById("hours")
-    .innerText = hours;
 
-    document.getElementById("minutes")
-    .innerText = minutes;
+document.getElementById("days")
+.innerText = days;
 
-    document.getElementById("seconds")
-    .innerText = seconds;
+document.getElementById("hours")
+.innerText = hours;
+
+document.getElementById("minutes")
+.innerText = minutes;
+
+document.getElementById("seconds")
+.innerText = seconds;
 
 }
 
@@ -1057,25 +1033,25 @@ attendance.addEventListener(
 "change",
 function() {
 
-    if (this.value === "Yes") {
+if (this.value === "Yes") {
 
-        guestGroup.style.display =
-        "block";
+guestGroup.style.display =
+"block";
 
-        guests.required = true;
+guests.required = true;
 
-    }
+}
 
-    else {
+else {
 
-        guestGroup.style.display =
-        "none";
+guestGroup.style.display =
+"none";
 
-        guests.required = false;
+guests.required = false;
 
-        guests.value = "";
+guests.value = "";
 
-    }
+}
 
 });
 
@@ -1090,147 +1066,131 @@ document
 "submit",
 async function(event) {
 
-    event.preventDefault();
+event.preventDefault();
 
 
-    const button =
-    document.querySelector(
-    ".submit-button"
-    );
+const button =
+document.querySelector(
+".submit-button"
+);
 
 
-    button.disabled = true;
+button.disabled = true;
 
-    button.innerText =
-    "SENDING...";
-
-
-    /* Generate RSVP ID */
-
-    const random =
-    Math.floor(
-        1000 +
-        Math.random() * 9000
-    );
+button.innerText =
+"SENDING...";
 
 
-    const rsvpID =
-    "HF-" + random;
+const data = {
+
+name:
+document.getElementById(
+"name"
+).value,
+
+attendance:
+document.getElementById(
+"attendance"
+).value,
+
+guests:
+document.getElementById(
+"guests"
+).value || "0",
+
+phone:
+document.getElementById(
+"phone"
+).value,
+
+message:
+document.getElementById(
+"message"
+).value
+
+};
 
 
-    /* Collect data */
-
-    const data = {
-
-        name:
-        document.getElementById(
-        "name"
-        ).value,
-
-        attendance:
-        document.getElementById(
-        "attendance"
-        ).value,
-
-        guests:
-        document.getElementById(
-        "guests"
-        ).value || "0",
-
-        phone:
-        document.getElementById(
-        "phone"
-        ).value,
-
-        message:
-        document.getElementById(
-        "message"
-        ).value,
-
-        rsvpID:
-        rsvpID
-
-    };
+try {
 
 
-    try {
+const response =
+await fetch(
+SCRIPT_URL,
+{
+
+method: "POST",
+
+headers: {
+
+"Content-Type":
+"text/plain;charset=utf-8"
+
+},
+
+body:
+JSON.stringify(data)
+
+}
+);
 
 
-        /*
-        Send data to Google Sheet
-        */
-
-        await fetch(
-        SCRIPT_URL,
-        {
-
-            method: "POST",
-
-            mode: "no-cors",
-
-            headers: {
-
-                "Content-Type":
-                "text/plain;charset=utf-8"
-
-            },
-
-            body:
-            JSON.stringify(data)
-
-        });
+const result =
+await response.json();
 
 
-        /*
-        Show Thank You
-        */
+if (!result.success) {
 
-        document
-        .getElementById(
-        "rsvpForm"
-        )
-        .style.display =
-        "none";
+throw new Error(
+result.error ||
+"Unable to submit RSVP."
+);
+
+}
 
 
-        document
-        .getElementById(
-        "rsvpID"
-        )
-        .innerText =
-        rsvpID;
+/* Hide form */
+
+document
+.getElementById("rsvpForm")
+.style.display =
+"none";
 
 
-        document
-        .getElementById(
-        "success"
-        )
-        .style.display =
-        "block";
+/* Show SAME ID from Google Sheet */
+
+document
+.getElementById("rsvpID")
+.innerText =
+result.rsvpID;
 
 
-    }
+document
+.getElementById("success")
+.style.display =
+"block";
 
 
-    catch(error) {
+}
 
 
-        console.error(error);
+catch(error) {
+
+console.error(error);
 
 
-        alert(
-        "Something went wrong. Please try again."
-        );
+alert(
+"Something went wrong. Please try again."
+);
 
 
-        button.disabled =
-        false;
+button.disabled =
+false;
 
+button.innerText =
+"SUBMIT RSVP";
 
-        button.innerText =
-        "SUBMIT RSVP";
-
-    }
+}
 
 });
 
