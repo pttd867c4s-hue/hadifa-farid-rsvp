@@ -800,6 +800,10 @@ const SCRIPT_URL =
 "https://script.google.com/macros/s/AKfycbzZlKrlImzWqDcXTneY5jnKYBxR00aAYKMMHolflW69SISF7SUcB-ni540ZjNUfGWVY/exec";
 
 
+const SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbzZlKrlImzWqDcXTneY5jnKYBxR00aAYKMMHolflW69SISF7SUcB-ni540ZjNUfGWVY/exec";
+
+
 document
 .getElementById("rsvpForm")
 .addEventListener("submit", async function(event) {
@@ -835,20 +839,33 @@ document
 
     try {
 
-        await fetch(SCRIPT_URL, {
+        const response = await fetch(
+            SCRIPT_URL,
+            {
+                method: "POST",
 
-            method: "POST",
+                headers: {
+                    "Content-Type":
+                        "text/plain;charset=utf-8"
+                },
 
-            mode: "no-cors",
+                body: JSON.stringify(data)
+            }
+        );
 
-            headers: {
-                "Content-Type":
-                    "text/plain;charset=utf-8"
-            },
 
-            body: JSON.stringify(data)
+        const result =
+            await response.json();
 
-        });
+
+        if (!result.success) {
+
+            throw new Error(
+                result.error ||
+                "Unable to submit RSVP."
+            );
+
+        }
 
 
         document
@@ -856,21 +873,67 @@ document
         .style.display = "none";
 
 
-        document
-        .getElementById("success")
-        .style.display = "block";
+        const success =
+            document.getElementById("success");
+
+
+        success.innerHTML = `
+
+            <div style="
+                font-family:'Cormorant Garamond',serif;
+                font-size:30px;
+                margin-bottom:15px;
+            ">
+                Thank You 🤍
+            </div>
+
+            <div style="
+                font-family:'Montserrat',sans-serif;
+                font-size:13px;
+                line-height:2;
+            ">
+
+                Your RSVP has been received.
+
+                <br><br>
+
+                <strong>
+                    RSVP ID
+                </strong>
+
+                <br>
+
+                <span style="
+                    font-size:20px;
+                    letter-spacing:2px;
+                ">
+                    ${result.rsvpID}
+                </span>
+
+                <br><br>
+
+                We look forward to celebrating
+                with you!
+
+            </div>
+
+        `;
+
+        success.style.display = "block";
 
 
     } catch (error) {
 
         alert(
-            "Something went wrong. Please try again."
+            "Sorry, your RSVP could not be submitted. Please try again."
         );
 
         submitButton.disabled = false;
 
         submitButton.innerText =
             "SUBMIT RSVP";
+
+        console.error(error);
 
     }
 
