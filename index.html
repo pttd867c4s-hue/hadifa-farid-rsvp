@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Hadifa & Farid | Wedding RSVP</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #f7f2ed;
+    color: #51453e;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: #fffaf6;
+    min-height: 100vh;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    padding: 60px 25px;
+
+    background:
+        radial-gradient(circle at top left,
+        rgba(210,195,183,.35),
+        transparent 35%),
+        radial-gradient(circle at bottom right,
+        rgba(210,195,183,.25),
+        transparent 35%),
+        #f8f3ee;
+}
+
+.hero-content {
+    width: 100%;
+}
+
+.small-title {
+    font-size: 10px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+}
+
+.names {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 68px;
+    font-weight: 500;
+    line-height: .85;
+    margin: 0;
+}
+
+.and {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-style: italic;
+    margin: 15px 0;
+}
+
+.line {
+    width: 60px;
+    height: 1px;
+    background: #b8a79b;
+    margin: 30px auto;
+}
+
+.date {
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.location {
+    margin-top: 12px;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+/* BUTTON */
+
+.button {
+    display: inline-block;
+    margin-top: 35px;
+    padding: 15px 35px;
+
+    background: #5b4c43;
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+
+    border: none;
+    cursor: pointer;
+}
+
+/* SECTION */
+
+section {
+    padding: 65px 30px;
+    text-align: center;
+}
+
+.section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 500;
+    margin: 0 0 20px;
+}
+
+.section-text {
+    font-size: 13px;
+    line-height: 2;
+}
+
+/* DETAILS */
+
+.details {
+    background: #f3ede7;
+}
+
+.detail-item {
+    margin: 30px 0;
+}
+
+.detail-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.detail-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+}
+
+/* COUNTDOWN */
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.count-box {
+    min-width: 55px;
+}
+
+.count-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
+}
+
+.count-label {
+    font-size: 8px;
+    letter-spacing: 1px;
+}
+
+/* RSVP */
+
+.rsvp {
+    background: #fffaf6;
+}
+
+.form-group {
+    text-align: left;
+    margin: 20px 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+input,
+select,
+textarea {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: 1px solid #d8ccc2;
+
+    background: white;
+
+    color: #51453e;
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: 13px;
+
+    border-radius: 0;
+
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #8d7b6f;
+}
+
+.submit-button {
+
+    width: 100%;
+
+    padding: 16px;
+
+    border: none;
+
+    background: #5b4c43;
+
+    color: white;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+}
+
+/* SUCCESS */
+
+.success {
+
+    display: none;
+
+    padding: 30px 10px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 25px;
+
+    line-height: 1.4;
+}
+
+/* FOOTER */
+
+footer {
+
+    text-align: center;
+
+    padding: 35px 20px;
+
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: 21px;
+
+    background: #f3ede7;
+}
+
+/* MOBILE */
+
+@media(max-width:450px) {
+
+    .names {
+        font-size: 57px;
+    }
+
+    .section-title {
+        font-size: 34px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="small-title">
+The Wedding of
+</div>
+
+<h1 class="names">
+Hadifa
+</h1>
+
+<div class="and">
+and
+</div>
+
+<h1 class="names">
+Farid
+</h1>
+
+<div class="line"></div>
+
+<div class="date">
+13 MARCH 2027
+</div>
+
+<div class="location">
+BALAI AKAD, LUNAS
+</div>
+
+<a href="#rsvp" class="button">
+RSVP
+</a>
+
+</div>
+
+</section>
+
+
+<!-- INVITATION -->
+
+<section>
+
+<h2 class="section-title">
+We'd Love To Celebrate With You
+</h2>
+
+<p class="section-text">
+
+With love and gratitude,
+
+we invite you to join us
+
+as we celebrate our special day.
+
+<br><br>
+
+Your presence would mean so much
+
+to us and our families.
+
+</p>
+
+</section>
+
+
+<!-- DETAILS -->
+
+<section class="details">
+
+<h2 class="section-title">
+The Details
+</h2>
+
+
+<div class="detail-item">
+
+<div class="detail-label">
+Date
+</div>
+
+<div class="detail-value">
+13 March 2027
+</div>
+
+</div>
+
+
+<div class="detail-item">
+
+<div class="detail-label">
+Time
+</div>
+
+<div class="detail-value">
+10.00 AM — 3.00 PM
+</div>
+
+</div>
+
+
+<div class="detail-item">
+
+<div class="detail-label">
+Venue
+</div>
+
+<div class="detail-value">
+Balai Akad, Lunas
+</div>
+
+<a
+class="button"
+target="_blank"
+href="https://www.google.com/maps/search/?api=1&query=Balai+Akad+Lunas">
+
+OPEN MAP
+
+</a>
+
+</div>
+
+
+</section>
+
+
+<!-- COUNTDOWN -->
+
+<section>
+
+<h2 class="section-title">
+Counting Down
+</h2>
+
+<div class="countdown">
+
+<div class="count-box">
+
+<div
+class="count-number"
+id="days">
+0
+</div>
+
+<div class="count-label">
+DAYS
+</div>
+
+</div>
+
+
+<div class="count-box">
+
+<div
+class="count-number"
+id="hours">
+0
+</div>
+
+<div class="count-label">
+HOURS
+</div>
+
+</div>
+
+
+<div class="count-box">
+
+<div
+class="count-number"
+id="minutes">
+0
+</div>
+
+<div class="count-label">
+MINUTES
+</div>
+
+</div>
+
+
+<div class="count-box">
+
+<div
+class="count-number"
+id="seconds">
+0
+</div>
+
+<div class="count-label">
+SECONDS
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- RSVP -->
+
+<section
+class="rsvp"
+id="rsvp">
+
+<h2 class="section-title">
+RSVP
+</h2>
+
+<p class="section-text">
+
+Kindly confirm your attendance
+
+by <strong>27 February 2027</strong>.
+
+</p>
+
+
+<form
+id="rsvpForm">
+
+
+<div class="form-group">
+
+<label>
+Full Name
+</label>
+
+<input
+type="text"
+id="name"
+placeholder="Your full name"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Will you be attending?
+</label>
+
+<select
+id="attendance"
+required>
+
+<option value="">
+Please select
+</option>
+
+<option value="Yes">
+Yes, I will be there 🤍
+</option>
+
+<option value="No">
+Sorry, I can't make it
+</option>
+
+</select>
+
+</div>
+
+
+<div
+class="form-group"
+id="guestGroup"
+style="display:none">
+
+<label>
+Number of Guests
+</label>
+
+<select id="guests">
+
+<option value="">
+Select number
+</option>
+
+<option value="1">
+1 person
+</option>
+
+<option value="2">
+2 people
+</option>
+
+<option value="3">
+3 people
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Phone Number
+</label>
+
+<input
+type="tel"
+id="phone"
+placeholder="01X-XXXXXXX">
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Message
+</label>
+
+<textarea
+id="message"
+placeholder="Leave a message for the couple..."></textarea>
+
+</div>
+
+
+<button
+type="submit"
+class="submit-button">
+
+SUBMIT RSVP
+
+</button>
+
+
+</form>
+
+
+<div
+class="success"
+id="success">
+
+Thank you for your RSVP 🤍
+
+<br>
+
+Hadifa & Farid
+
+</div>
+
+
+</section>
+
+
+<footer>
+
+With love,
+
+<br>
+
+Hadifa & Farid ♡
+
+</footer>
+
+
+</div>
+
+
+<script>
+
+/* COUNTDOWN */
+
+const weddingDate =
+new Date("March 13, 2027 10:00:00").getTime();
+
+
+function updateCountdown() {
+
+    const now = new Date().getTime();
+
+    const distance =
+        weddingDate - now;
+
+
+    if (distance <= 0) {
+
+        document.getElementById("days").innerText = "0";
+        document.getElementById("hours").innerText = "0";
+        document.getElementById("minutes").innerText = "0";
+        document.getElementById("seconds").innerText = "0";
+
+        return;
+    }
+
+
+    const days =
+        Math.floor(
+            distance /
+            (1000 * 60 * 60 * 24)
+        );
+
+
+    const hours =
+        Math.floor(
+            (distance %
+            (1000 * 60 * 60 * 24)) /
+            (1000 * 60 * 60)
+        );
+
+
+    const minutes =
+        Math.floor(
+            (distance %
+            (1000 * 60 * 60)) /
+            (1000 * 60)
+        );
+
+
+    const seconds =
+        Math.floor(
+            (distance %
+            (1000 * 60)) /
+            1000
+        );
+
+
+    document.getElementById("days")
+        .innerText = days;
+
+    document.getElementById("hours")
+        .innerText = hours;
+
+    document.getElementById("minutes")
+        .innerText = minutes;
+
+    document.getElementById("seconds")
+        .innerText = seconds;
+
+}
+
+
+updateCountdown();
+
+setInterval(
+    updateCountdown,
+    1000
+);
+
+
+/* RSVP */
+
+const attendance =
+document.getElementById("attendance");
+
+const guestGroup =
+document.getElementById("guestGroup");
+
+const guests =
+document.getElementById("guests");
+
+
+attendance.addEventListener(
+    "change",
+    function() {
+
+        if (this.value === "Yes") {
+
+            guestGroup.style.display =
+                "block";
+
+            guests.required = true;
+
+        } else {
+
+            guestGroup.style.display =
+                "none";
+
+            guests.required = false;
+
+        }
+
+    }
+);
+
+
+/* FORM */
+
+document
+.getElementById("rsvpForm")
+.addEventListener(
+    "submit",
+    function(event) {
+
+        event.preventDefault();
+
+
+        const name =
+            document.getElementById("name")
+            .value;
+
+        const attend =
+            attendance.value;
+
+        const guestCount =
+            guests.value || "0";
+
+        const phone =
+            document.getElementById("phone")
+            .value;
+
+        const message =
+            document.getElementById("message")
+            .value;
+
+
+        /*
+        TEMPORARY RSVP STORAGE
+
+        This saves the RSVP in the
+        visitor's browser.
+
+        Later we can connect this
+        website to Google Sheets.
+        */
+
+
+        const rsvpData = {
+
+            name: name,
+
+            attendance: attend,
+
+            guests: guestCount,
+
+            phone: phone,
+
+            message: message,
+
+            date:
+                new Date()
+                .toLocaleString()
+
+        };
+
+
+        let existing =
+            JSON.parse(
+                localStorage.getItem(
+                    "hadifaFaridRSVP"
+                )
+            ) || [];
+
+
+        existing.push(rsvpData);
+
+
+        localStorage.setItem(
+            "hadifaFaridRSVP",
+            JSON.stringify(existing)
+        );
+
+
+        document
+        .getElementById("rsvpForm")
+        .style.display = "none";
+
+
+        document
+        .getElementById("success")
+        .style.display = "block";
+
+    }
+);
+
+</script>
+
+</body>
+</html>
