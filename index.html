@@ -796,79 +796,59 @@ attendance.addEventListener(
 
 /* FORM */
 
+const SCRIPT_URL =
+"https://script.google.com/macros/s/AKfycbzZlKrlImzWqDcXTneY5jnKYBxR00aAYKMMHolflW69SISF7SUcB-ni540ZjNUfGWVY/exec";
+
+
 document
 .getElementById("rsvpForm")
-.addEventListener(
-    "submit",
-    function(event) {
+.addEventListener("submit", async function(event) {
 
-        event.preventDefault();
+    event.preventDefault();
 
+    const submitButton =
+        document.querySelector(".submit-button");
 
-        const name =
-            document.getElementById("name")
-            .value;
-
-        const attend =
-            attendance.value;
-
-        const guestCount =
-            guests.value || "0";
-
-        const phone =
-            document.getElementById("phone")
-            .value;
-
-        const message =
-            document.getElementById("message")
-            .value;
+    submitButton.disabled = true;
+    submitButton.innerText = "SENDING...";
 
 
-        /*
-        TEMPORARY RSVP STORAGE
+    const data = {
 
-        This saves the RSVP in the
-        visitor's browser.
+        name:
+            document.getElementById("name").value,
 
-        Later we can connect this
-        website to Google Sheets.
-        */
+        attendance:
+            document.getElementById("attendance").value,
 
+        guests:
+            document.getElementById("guests").value || "0",
 
-        const rsvpData = {
+        phone:
+            document.getElementById("phone").value,
 
-            name: name,
+        message:
+            document.getElementById("message").value
 
-            attendance: attend,
-
-            guests: guestCount,
-
-            phone: phone,
-
-            message: message,
-
-            date:
-                new Date()
-                .toLocaleString()
-
-        };
+    };
 
 
-        let existing =
-            JSON.parse(
-                localStorage.getItem(
-                    "hadifaFaridRSVP"
-                )
-            ) || [];
+    try {
 
+        await fetch(SCRIPT_URL, {
 
-        existing.push(rsvpData);
+            method: "POST",
 
+            mode: "no-cors",
 
-        localStorage.setItem(
-            "hadifaFaridRSVP",
-            JSON.stringify(existing)
-        );
+            headers: {
+                "Content-Type":
+                    "text/plain;charset=utf-8"
+            },
+
+            body: JSON.stringify(data)
+
+        });
 
 
         document
@@ -880,9 +860,21 @@ document
         .getElementById("success")
         .style.display = "block";
 
-    }
-);
 
+    } catch (error) {
+
+        alert(
+            "Something went wrong. Please try again."
+        );
+
+        submitButton.disabled = false;
+
+        submitButton.innerText =
+            "SUBMIT RSVP";
+
+    }
+
+});
 </script>
 
 </body>
